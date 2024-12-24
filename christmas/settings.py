@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u*x1^ldap_!phfo0z@+@(+24+_b^$$^feip+s!_042l==m!hv^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['47.121.137.60', 'app7308.acapp.acwing.com.cn']
 
 
 # Application definition
@@ -122,7 +122,15 @@ STATICFILES_DIRS = [
 ]
 
 # 生产环境收集静态文件时使用的路径
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+# MEDIA_URL 用于访问媒体文件的 URL
+MEDIA_URL = '/media/'
+
+# MEDIA_ROOT 用于定义上传文件存储的文件系统路径
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
